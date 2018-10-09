@@ -1,0 +1,28 @@
+{
+  "name": "miladrahimi/php-enum",
+  "description": "A PHP Abstract Enum Class",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Milad Rahimi",
+      "email": "info@miladrahimi.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MiladRahimi\\PhpEnum\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MiladRahimi\\PhpEnum\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.4"
+  }
+}
