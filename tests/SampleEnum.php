@@ -4,7 +4,7 @@ namespace MiladRahimi\PhpEnum\Tests;
 
 use MiladRahimi\PhpEnum\Enum;
 
-class SampleEnum1 extends Enum
+class SampleEnum extends Enum
 {
     const ONE = 1;
     const UNO = 1;

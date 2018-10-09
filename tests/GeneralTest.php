@@ -19,34 +19,34 @@ class GeneralTest extends TestCase
 
     public function test_items_method()
     {
-        $items = SampleEnum1::items();
+        $items = SampleEnum::items();
 
         $this->assertSame($this->sample1, $items);
     }
 
     public function test_keys_method()
     {
-        $keys = SampleEnum1::keys();
+        $keys = SampleEnum::keys();
 
         $this->assertSame($this->sample1Keys, $keys);
     }
 
     public function test_values_method()
     {
-        $values = SampleEnum1::values();
+        $values = SampleEnum::values();
 
         $this->assertSame($this->sample1Values, $values);
     }
 
     public function test_hasKey_method()
     {
-        $this->assertTrue(SampleEnum1::hasKey($this->sample1Keys[0]));
-        $this->assertFalse(SampleEnum1::hasKey(''));
+        $this->assertTrue(SampleEnum::hasKey($this->sample1Keys[0]));
+        $this->assertFalse(SampleEnum::hasKey(''));
     }
 
     public function test_hasValue_method()
     {
-        $this->assertTrue(SampleEnum1::hasValue($this->sample1Values[0]));
-        $this->assertFalse(SampleEnum1::hasValue(''));
+        $this->assertTrue(SampleEnum::hasValue($this->sample1Values[0]));
+        $this->assertFalse(SampleEnum::hasValue(''));
     }
 }
