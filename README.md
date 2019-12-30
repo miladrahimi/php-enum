@@ -1,3 +1,9 @@
+[![Latest Stable Version](https://poser.pugx.org/miladrahimi/php-enum/v/stable)](https://packagist.org/packages/miladrahimi/php-enum)
+[![Total Downloads](https://poser.pugx.org/miladrahimi/php-enum/downloads)](https://packagist.org/packages/miladrahimi/php-enum)
+[![Build Status](https://travis-ci.org/miladrahimi/php-enum.svg?branch=master)](https://travis-ci.org/miladrahimi/php-enum)
+[![Coverage Status](https://coveralls.io/repos/github/miladrahimi/php-enum/badge.svg?branch=master)](https://coveralls.io/github/miladrahimi/php-enum?branch=master)
+[![License](https://poser.pugx.org/miladrahimi/php-enum/license)](https://packagist.org/packages/miladrahimi/php-enum)
+
 # PhpEnum
 
 A PHP Abstract Enum Class
