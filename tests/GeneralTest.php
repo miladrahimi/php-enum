@@ -17,9 +17,9 @@ class GeneralTest extends TestCase
 
     private $sample1Values = [1, 1, 2, 'sth'];
 
-    public function test_items_method()
+    public function test_all_method()
     {
-        $items = SampleEnum::items();
+        $items = SampleEnum::all();
 
         $this->assertSame($this->sample1, $items);
     }

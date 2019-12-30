@@ -19,7 +19,7 @@ abstract class Enum
      *
      * @return array
      */
-    public static function items(): array
+    public static function all(): array
     {
         try {
             return static::$items ?: static::$items = (new ReflectionClass(static::class))->getConstants();
@@ -35,7 +35,7 @@ abstract class Enum
      */
     public static function keys(): array
     {
-        return array_keys(static::items());
+        return array_keys(static::all());
     }
 
     /**
@@ -45,7 +45,7 @@ abstract class Enum
      */
     public static function values(): array
     {
-        return array_values(static::items());
+        return array_values(static::all());
     }
 
     /**
@@ -56,7 +56,7 @@ abstract class Enum
      */
     public static function hasKey(string $key): bool
     {
-        return array_key_exists($key, static::items());
+        return array_key_exists($key, static::all());
     }
 
     /**
@@ -67,7 +67,7 @@ abstract class Enum
      */
     public static function hasValue($value): bool
     {
-        return in_array($value, static::items());
+        return in_array($value, static::all());
     }
 
     /**
@@ -79,7 +79,7 @@ abstract class Enum
      */
     public static function valueOf($key, $default = null)
     {
-        return static::items()[$key] ?? $default;
+        return static::all()[$key] ?? $default;
     }
 
     /**
@@ -92,7 +92,7 @@ abstract class Enum
     {
         $keys = [];
 
-        foreach (static::items() as $k => $v) {
+        foreach (static::all() as $k => $v) {
             $v == $value && ($keys[] = $k);
         }
 
