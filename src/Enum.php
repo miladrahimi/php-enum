@@ -98,4 +98,16 @@ abstract class Enum
 
         return $keys;
     }
+
+    /**
+     * Get only the first related key of the given value
+     *
+     * @param $value
+     * @param null $default
+     * @return mixed|null
+     */
+    public static function keyOf($value, $default = null)
+    {
+        return static::keysOf($value)[0] ?? $default;
+    }
 }

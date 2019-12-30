@@ -62,4 +62,10 @@ class GeneralTest extends TestCase
         $this->assertSame(['STR'], SampleEnum::keysOf('sth'));
         $this->assertSame(['ONE', 'UNO'], SampleEnum::keysOf(1));
     }
+
+    public function test_key_of_method()
+    {
+        $this->assertSame('STR', SampleEnum::keyOf('sth'));
+        $this->assertSame('ONE', SampleEnum::keyOf(1));
+    }
 }
