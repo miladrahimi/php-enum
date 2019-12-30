@@ -1,8 +1,8 @@
 <?php
 
-namespace MiladRahimi\PhpEnum\Tests;
+namespace MiladRahimi\Enum\Tests;
 
-use MiladRahimi\PhpEnum\Enum;
+use MiladRahimi\Enum\Enum;
 
 class SampleEnum extends Enum
 {

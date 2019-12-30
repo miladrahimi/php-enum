@@ -1,6 +1,6 @@
 <?php
 
-namespace MiladRahimi\PhpEnum;
+namespace MiladRahimi\Enum;
 
 use ReflectionClass;
 use ReflectionException;
@@ -15,7 +15,7 @@ abstract class Enum
     protected static $items = [];
 
     /**
-     * Get all items in the enum
+     * Get all the items in the enum
      *
      * @return array
      */
@@ -29,7 +29,7 @@ abstract class Enum
     }
 
     /**
-     * Get all declared keys
+     * Get all the declared keys
      *
      * @return array
      */
@@ -39,7 +39,7 @@ abstract class Enum
     }
 
     /**
-     * Get all declared values
+     * Get all the declared values
      *
      * @return array
      */
@@ -49,7 +49,7 @@ abstract class Enum
     }
 
     /**
-     * Is key declared in the enum
+     * Check if the given key declared in the enum or not
      *
      * @param string $key
      * @return bool
@@ -60,7 +60,7 @@ abstract class Enum
     }
 
     /**
-     * Is value declared in the enum
+     * Check if the given value declared in the enum or not
      *
      * @param mixed $value
      * @return bool
@@ -68,5 +68,34 @@ abstract class Enum
     public static function hasValue($value): bool
     {
         return in_array($value, static::items());
+    }
+
+    /**
+     * Get value of the given key
+     *
+     * @param $key
+     * @param mixed|null $default
+     * @return mixed|null
+     */
+    public static function valueOf($key, $default = null)
+    {
+        return static::items()[$key] ?? $default;
+    }
+
+    /**
+     * Get related keys of the given value
+     *
+     * @param $value
+     * @return array
+     */
+    public static function keysOf($value): array
+    {
+        $keys = [];
+
+        foreach (static::items() as $k => $v) {
+            $v == $value && ($keys[] = $k);
+        }
+
+        return $keys;
     }
 }

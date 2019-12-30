@@ -1,6 +1,6 @@
 <?php
 
-namespace MiladRahimi\PhpEnum\Tests;
+namespace MiladRahimi\Enum\Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -48,5 +48,18 @@ class GeneralTest extends TestCase
     {
         $this->assertTrue(SampleEnum::hasValue($this->sample1Values[0]));
         $this->assertFalse(SampleEnum::hasValue(''));
+    }
+
+    public function test_value_of_method()
+    {
+        $this->assertSame('sth', SampleEnum::valueOf('STR'));
+        $this->assertSame(1, SampleEnum::valueOf('ONE'));
+        $this->assertSame(1, SampleEnum::valueOf('UNO'));
+    }
+
+    public function test_keys_of_method()
+    {
+        $this->assertSame(['STR'], SampleEnum::keysOf('sth'));
+        $this->assertSame(['ONE', 'UNO'], SampleEnum::keysOf(1));
     }
 }
