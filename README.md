@@ -6,7 +6,7 @@
 
 # PHP-Enum
 
-To make your Enums feel alive, just use the `Enum` abstract class as their parent.
+To make your Enums feel alive, just make them extend `Enum` abstract class!
 
 ## Installation
 
