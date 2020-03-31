@@ -68,4 +68,14 @@ class GeneralTest extends TestCase
         $this->assertSame('STR', SampleEnum::keyOf('sth'));
         $this->assertSame('ONE', SampleEnum::keyOf(1));
     }
+
+    public function test_random_key()
+    {
+        $this->assertArrayHasKey(SampleEnum::randomKey(), SampleEnum::all());
+    }
+
+    public function test_random_value()
+    {
+        $this->assertContains(SampleEnum::randomValue(), SampleEnum::all());
+    }
 }

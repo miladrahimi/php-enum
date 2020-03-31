@@ -110,4 +110,24 @@ abstract class Enum
     {
         return static::keysOf($value)[0] ?? $default;
     }
+
+    /**
+     * Get a random key
+     *
+     * @return mixed
+     */
+    public static function randomKey()
+    {
+        return array_rand(static::all());
+    }
+
+    /**
+     * Get a random value
+     *
+     * @return mixed
+     */
+    public static function randomValue()
+    {
+        return static::all()[array_rand(static::all())];
+    }
 }
