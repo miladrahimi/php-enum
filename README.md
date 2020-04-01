@@ -58,7 +58,7 @@ SampleEnum::keyOf(1); // 'UNO'
 
 SampleEnum::randomKey(); // One of 'UNO', 'ONE', 'TWO', 'STR'
 
-SampleEnum::randomValue(); // One of 1,2,'sth'
+SampleEnum::randomValue(); // One of 1, 2, 'sth'
 ```
 
 ## License
