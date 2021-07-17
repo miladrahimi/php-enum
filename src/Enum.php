@@ -3,7 +3,7 @@
 namespace MiladRahimi\Enum;
 
 use ReflectionClass;
-use ReflectionException;
+use Throwable;
 
 abstract class Enum
 {
@@ -22,8 +22,12 @@ abstract class Enum
     public static function all(): array
     {
         try {
-            return static::$items ?: static::$items = (new ReflectionClass(static::class))->getConstants();
-        } catch (ReflectionException $e) {
+            if (isset(static::$items[static::class])) {
+                return static::$items[static::class];
+            }
+
+            return static::$items[static::class] = (new ReflectionClass(static::class))->getConstants();
+        } catch (Throwable $e) {
             return [];
         }
     }
