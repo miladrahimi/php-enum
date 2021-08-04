@@ -58,7 +58,15 @@ SampleEnum::keyOf(1); // 'UNO'
 
 SampleEnum::randomKey(); // One of 'UNO', 'ONE', 'TWO', 'STR'
 
+SampleEnum::randomKeyExceptKeys(['ONE', 'TWO']); // One of 'UNO', 'STR'
+
+SampleEnum::randomKeyExceptValues([SampleEnum::STR, SampleEnum::TWO]); // One of 'ONE', 'UNO'
+
 SampleEnum::randomValue(); // One of 1, 2, 'sth'
+
+SampleEnum::randomValueExceptValues([SampleEnum::STR, SampleEnum::TWO]); // One of SampleEnum::ONE, SampleEnum::UNO
+
+SampleEnum::randomValueExceptKeys(['STR', 'TWO']); // One of SampleEnum::ONE, SampleEnum::UNO
 ```
 
 ## License
