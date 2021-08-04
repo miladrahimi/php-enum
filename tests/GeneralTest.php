@@ -74,8 +74,30 @@ class GeneralTest extends TestCase
         $this->assertArrayHasKey(SampleEnum::randomKey(), SampleEnum::all());
     }
 
+    public function test_random_key_except_keys()
+    {
+        $this->assertContains(SampleEnum::randomKeyExceptKeys(['ONE', 'TWO']), ['UNO', 'STR']);
+    }
+
+    public function test_random_key_except_values()
+    {
+        $this->assertContains(SampleEnum::randomKeyExceptValues([SampleEnum::STR, SampleEnum::TWO]), ['ONE', 'UNO']);
+    }
+
     public function test_random_value()
     {
         $this->assertContains(SampleEnum::randomValue(), SampleEnum::all());
+    }
+
+    public function test_random_value_except_values()
+    {
+        $this->assertContains(SampleEnum::randomValueExceptValues([SampleEnum::STR, SampleEnum::TWO]),
+            [SampleEnum::ONE]
+        );
+    }
+
+    public function test_random_value_except_keys()
+    {
+        $this->assertContains(SampleEnum::randomValueExceptKeys(['STR', 'TWO']), [SampleEnum::ONE]);
     }
 }

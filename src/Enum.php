@@ -126,6 +126,36 @@ abstract class Enum
     }
 
     /**
+     * Get a random key except given values
+     *
+     * @param array $values
+     * @return array|int|string
+     */
+    public static function randomKeyExceptValues(array $values = [])
+    {
+        do {
+            $key = array_rand(static::all());
+        } while (in_array(static::all()[$key], $values));
+
+        return $key;
+    }
+
+    /**
+     * Get a random key except given keys
+     *
+     * @param array $keys
+     * @return array|int|string
+     */
+    public static function randomKeyExceptKeys(array $keys = [])
+    {
+        do {
+            $key = array_rand(static::all());
+        } while (in_array($key, $keys));
+
+        return $key;
+    }
+
+    /**
      * Get a random value
      *
      * @return mixed
@@ -133,5 +163,35 @@ abstract class Enum
     public static function randomValue()
     {
         return static::all()[array_rand(static::all())];
+    }
+
+    /**
+     * Get a random value except given values
+     *
+     * @param array $values
+     * @return mixed
+     */
+    public static function randomValueExceptValues(array $values = [])
+    {
+        do {
+            $value = static::all()[array_rand(static::all())];
+        } while (in_array($value, $values));
+
+        return $value;
+    }
+
+    /**
+     * Get a random value except given keys
+     *
+     * @param array $keys
+     * @return mixed
+     */
+    public static function randomValueExceptKeys(array $keys = [])
+    {
+        do {
+            $key = array_rand(static::all());
+        } while (in_array($key, $keys));
+
+        return static::all()[$key];
     }
 }
